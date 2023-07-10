@@ -32,7 +32,7 @@ const router = createBrowserRouter([
       }
     ]
   }
-])
+], { basename: '/phicos-react/' })
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
