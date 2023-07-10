@@ -21,7 +21,7 @@ const CareerForm = () => {
     date_birth: z.date(),
     field_study: z.string(),
     email: z.string().email(),
-    pos: z.enum(["all", "mentions", "none"]),
+    pos: z.string(),
     resume: z.any(),
   })
 

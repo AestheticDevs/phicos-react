@@ -1,6 +1,5 @@
 import { FC, useEffect, useRef } from "react";
 import PhicosLogo from '@/assets/logo/phicos_logo.png';
-import { MenuIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useScroll } from "framer-motion";
 
@@ -34,7 +33,7 @@ const Navbar: FC = () => {
   const navContainer = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const scrollListener = window.addEventListener('scroll', () => {
+    window.addEventListener('scroll', () => {
       if (navContainer.current) {
         if (scrollY.get() > 50) {
           navContainer.current.classList.add('py-3', 'navShadow')
