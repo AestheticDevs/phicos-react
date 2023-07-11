@@ -7,12 +7,14 @@ import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import { Button } from "@/components/ui/button";
 import { FC } from "react";
+import { services } from "@/store/services";
+import { cn } from "@/lib/utils";
 const Index: FC = () => {
     return (
         <>
             <section className="grid grid-cols-2  h-[600px] max-w-7xl container mx-auto">
                 <div className="w-fit text-start my-auto">
-                    <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl  bg-gradient-to-tr from-purple-500 via-blue-400 to-teal-400 bg-clip-text text-transparent">
+                    <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-6xl  bg-gradient-to-tl from-blue-400 to-green-400 bg-clip-text text-transparent">
                         Trust Your Idea to Us!
                     </h1>
                     <p className="leading-7 [&:not(:first-child)]:mt-6 text-slate-500 mb-6 text-xl">
@@ -25,14 +27,14 @@ const Index: FC = () => {
                         <Button
                             variant={"default"}
                             size={"lg"}
-                            className="rounded-full"
+                            className={cn('rounded-full bg-gradient-to-t from-blue-400 to-green-400 hover:shadow-lg')}
                         >
                             Get Started
                         </Button>
                         <Button
                             variant={"secondary"}
                             size={"lg"}
-                            className="rounded-full"
+                            className={cn('rounded-full bg-gradient-to-t from-slate-200 to-slate-50 hover:shadow-lg')}
                         >
                             Learn More
                         </Button>
@@ -55,25 +57,24 @@ const Index: FC = () => {
                         </p>
                     </div>
                     <div className="grid grid-cols-3 gap-8">
-                        {[...Array(6)].map((_, index) => (
+                        {services.map((service, index) => (
                             <div
                                 key={index}
-                                className="gap-8 p-8 border bg-white border-slate-100 rounded-2xl cardShadow hover:bg-gradient-to-tr from-purple-500 via-blue-400 to-teal-400 group"
+                                className="gap-8 p-8 border bg-white border-slate-100 rounded-2xl cardShadow hover:bg-gradient-to-t from-blue-500 to-green-400 group"
                             >
-                                <img
-                                    src={SoftDev}
-                                    alt="softdev image"
-                                    className="w-20 h-20 mb-6"
-                                />
+                                <div className="group-hover:bg-black/10 w-fit rounded-lg">
+                                    <img
+                                        src={service.img}
+                                        alt="softdev image"
+                                        className="w-20 h-20 mb-6"
+                                    />
+                                </div>
                                 <div>
                                     <h4 className="mb-4 font-medium text-slate-800 text-xl group-hover:text-white">
-                                        Software Development
+                                        {service.title}
                                     </h4>
                                     <p className="text-slate-700 group-hover:text-white">
-                                        Provides development and support to
-                                        information systems, based on the needs
-                                        collected and documented by the system
-                                        analyst.
+                                        {service.description}
                                     </p>
                                 </div>
                             </div>
@@ -89,8 +90,7 @@ const Index: FC = () => {
                             Companies we work with
                         </h2>
                         <p className="text-slate-700 group-hover:text-white">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit.
+                            Here are some of the outstanding organizations we have had the privilege to work with
                         </p>
                     </div>
                     <div>
