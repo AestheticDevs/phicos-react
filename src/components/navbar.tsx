@@ -36,19 +36,17 @@ const Navbar: FC = () => {
     window.addEventListener('scroll', () => {
       if (navContainer.current) {
         if (scrollY.get() > 50) {
-          navContainer.current.classList.add('py-3', 'navShadow')
-          navContainer.current.classList.remove('py-6')
+          navContainer.current.classList.add('navShadow')
         }
         else {
-          navContainer.current.classList.add('py-6')
-          navContainer.current.classList.remove('py-3', 'navShadow')
+          navContainer.current.classList.remove('navShadow')
         }
       }
     })
   }, [])
 
   return (
-    <nav ref={navContainer} className="bg-white py-6 transition-all">
+    <nav ref={navContainer} className="bg-white py-3 transition-all">
       <div className="container mx-auto flex justify-between">
         <Link to="/">
           <img src={PhicosLogo} alt="phicos logo" className="h-12" />
