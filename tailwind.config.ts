@@ -50,6 +50,8 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        'phicos-primary': '#1AD6B6',
+        'phicos-accent': '#0DB0DB'
       },
       borderRadius: {
         lg: "var(--radius)",
