@@ -1,9 +1,22 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "./ui/form";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "./ui/form";
 import { Input } from "./ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "./ui/select";
 import { Button } from "./ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { cn } from "@/lib/utils";
@@ -13,7 +26,6 @@ import { Calendar } from "./ui/calendar";
 import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
 
 const CareerForm = () => {
-
   const formSchema = z.object({
     full_name: z.string().min(2).max(100),
     qualification: z.string(),
@@ -23,7 +35,7 @@ const CareerForm = () => {
     email: z.string().email(),
     pos: z.string(),
     resume: z.any(),
-  })
+  });
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -34,25 +46,29 @@ const CareerForm = () => {
       field_study: "",
       qualification: "",
       resume: "",
-    }
-  })
+    },
+  });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values)
+    console.log(values);
   }
 
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-4 mb-8">
-        <FormField control={form.control} name="full_name" render={({ field }) => (
-          <FormItem>
-            <FormLabel>Full Name</FormLabel>
-            <FormControl>
-              <Input placeholder="shadcn" {...field} />
-            </FormControl>
-            <FormMessage />
-          </FormItem>
-        )} />
+        <FormField
+          control={form.control}
+          name="full_name"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Full Name</FormLabel>
+              <FormControl>
+                <Input placeholder="your actual name" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
 
         <FormField
           control={form.control}
@@ -77,15 +93,23 @@ const CareerForm = () => {
           )}
         />
 
-        <FormField control={form.control} name="phone_number" render={({ field }) => (
-          <FormItem>
-            <FormLabel>Phone Number</FormLabel>
-            <FormControl>
-              <Input placeholder="0123456789" type="number" {...field} />
-            </FormControl>
-            <FormMessage />
-          </FormItem>
-        )} />
+        <FormField
+          control={form.control}
+          name="phone_number"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Phone Number</FormLabel>
+              <FormControl>
+                <Input
+                  placeholder="your phone number"
+                  type="number"
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
 
         <FormField
           control={form.control}
@@ -106,7 +130,7 @@ const CareerForm = () => {
                       {field.value ? (
                         format(field.value, "PPP")
                       ) : (
-                        <span>Pick a date</span>
+                        <span>pick a date</span>
                       )}
                       <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                     </Button>
@@ -126,44 +150,57 @@ const CareerForm = () => {
               </Popover>
               <FormMessage />
             </FormItem>
-          )} />
+          )}
+        />
 
-        <FormField control={form.control} name="field_study" render={({ field }) => (
-          <FormItem>
-            <FormLabel>Field of study</FormLabel>
-            <FormControl>
-              <Input placeholder="field of study" {...field} />
-            </FormControl>
-            <FormMessage />
-          </FormItem>
-        )} />
+        <FormField
+          control={form.control}
+          name="field_study"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Field of study</FormLabel>
+              <FormControl>
+                <Input placeholder="field of study" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
 
-        <FormField control={form.control} name="email" render={({ field }) => (
-          <FormItem>
-            <FormLabel>Email</FormLabel>
-            <FormControl>
-              <Input placeholder="email" type="email" {...field} />
-            </FormControl>
-            <FormMessage />
-          </FormItem>
-        )} />
+        <FormField
+          control={form.control}
+          name="email"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Email</FormLabel>
+              <FormControl>
+                <Input placeholder="email" type="email" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
 
-        <FormField control={form.control} name="resume" render={({ field }) => (
-          <FormItem>
-            <FormLabel>Resume/CV</FormLabel>
-            <FormControl>
-              <Input type="file" {...field} />
-            </FormControl>
-            <FormMessage />
-          </FormItem>
-        )} />
+        <FormField
+          control={form.control}
+          name="resume"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Resume/CV</FormLabel>
+              <FormControl>
+                <Input type="file" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
 
         <FormField
           control={form.control}
           name="pos"
           render={({ field }) => (
             <FormItem className="space-y-3">
-              <FormLabel>Notify me about...</FormLabel>
+              <FormLabel>Applying for position</FormLabel>
               <FormControl>
                 <RadioGroup
                   onValueChange={field.onChange}
@@ -172,25 +209,25 @@ const CareerForm = () => {
                 >
                   <FormItem className="flex items-center space-x-3 space-y-0">
                     <FormControl>
-                      <RadioGroupItem value="all" />
+                      <RadioGroupItem value="backend" />
                     </FormControl>
                     <FormLabel className="font-normal">
-                      All new messages
+                      Backend Developer
                     </FormLabel>
                   </FormItem>
                   <FormItem className="flex items-center space-x-3 space-y-0">
                     <FormControl>
-                      <RadioGroupItem value="mentions" />
+                      <RadioGroupItem value="frontend" />
                     </FormControl>
                     <FormLabel className="font-normal">
-                      Direct messages and mentions
+                      Frontend Developer
                     </FormLabel>
                   </FormItem>
                   <FormItem className="flex items-center space-x-3 space-y-0">
                     <FormControl>
-                      <RadioGroupItem value="none" />
+                      <RadioGroupItem value="devops" />
                     </FormControl>
-                    <FormLabel className="font-normal">Nothing</FormLabel>
+                    <FormLabel className="font-normal">DevOps</FormLabel>
                   </FormItem>
                 </RadioGroup>
               </FormControl>
@@ -203,6 +240,6 @@ const CareerForm = () => {
       </form>
     </Form>
   );
-}
+};
 
 export default CareerForm;
