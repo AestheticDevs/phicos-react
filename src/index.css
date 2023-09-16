@@ -72,6 +72,7 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -79,22 +80,27 @@
 
 .hero-gradient {
   /* global 92%+ browsers support */
-  background: radial-gradient(
-      circle at 40% 50%,
-      rgba(109, 78, 238, 0.1) 20%,
-      rgba(109, 78, 238, 0) 0%,
-      rgba(238, 130, 238, 0) 100%
-    ),
-    radial-gradient(
-      circle at 25% 25%,
-      rgba(109, 78, 238, 0.1) 20%,
-      rgba(109, 78, 238, 0) 0%,
-      rgba(238, 130, 238, 0) 100%
-    ),
-    radial-gradient(
-      circle at 50% 25%,
+  /* background: radial-gradient(circle at 40% 50%,
+      rgba(26, 74, 245, 0.1) 20%,
+      rgba(98, 59, 254, 0) 0%,
+      rgba(38, 137, 250, 0) 100%),
+    radial-gradient(circle at 25% 35%,
+      rgba(184, 112, 232, 0.1) 20%,
+      rgba(91, 190, 252, 0) 0%,
+      rgba(43, 235, 238, 0) 100%),
+    radial-gradient(circle at 50% 25%,
       rgba(23, 205, 190, 0.1) 15%,
       rgba(109, 78, 238, 0) 0%,
-      rgba(238, 130, 238, 0) 100%
-    );
+      rgba(238, 130, 238, 0) 100%); */
+
+
+}
+
+.bg-primary {
+  @apply bg-teal-400
+}
+
+button {
+  min-width: 150px;
+  @apply font-bold
 }
