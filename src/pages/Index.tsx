@@ -49,12 +49,14 @@ const clientImg = [
 const Index: FC = () => {
     return (
         <>
-            <section className="bg-slate-900 relative overflow-hidden">
-                {/* <img
-                    src="https://img.freepik.com/free-vector/moire-pattern-background_53876-80499.jpg?t=st=1709173591~exp=1709177191~hmac=00f37dd583b675a8927539d745ee9a699fae4f51a585991de4ef2579b3dd3c17&w=1060"
+            <section className="bg-slate-900 relative overflow-hidden h-screen">
+                <img
+                    src="/public/bg-overlay.png"
                     alt=""
                     className="absolute top-0 left-0 w-full h-full object-cover mix-blend-luminosity z-0 opacity-5"
-                /> */}
+                />
+
+                <div className="ecplise w-48 h-48 right-0 left-0 mx-auto -bottom-10 blur-[200px] bg-phicos-primary z-2 absolute"></div>
                 <div className="grid grid-cols-2 min-h-[600px] py-28 container mx-auto items-center relative z-1">
                     <img
                         src={HeroImage}
@@ -82,7 +84,7 @@ const Index: FC = () => {
                                 terbaik dari kami.
                             </p>
                         </div>
-                        <button className="py-4 px-4 w-40 text-white bg-gradient-to-tl from-phicos-primary to-phicos-accent rounded-lg drop-shadow-xl transition-all hover:-translate-y-1 duration-200">
+                        <button className="py-4 px-4 w-40 text-white bg-gradient-to-tl from-phicos-primary to-phicos-accent rounded-lg drop-shadow-xl transition-all hover:-translate-y-1 duration-200 shadow-xl shadow-cyan-600/40">
                             Join Us
                         </button>
                     </div>
@@ -106,7 +108,7 @@ const Index: FC = () => {
                             <div
                                 // to={""}
                                 key={index}
-                                className="flex flex-col  justify-between gap-4 p-6 border bg-white border-slate-100 rounded-2xl cardShadow group hover:bg-gradient-to-br hover:bg-phicos-primary transition-all ease-in duration-200"
+                                className="flex flex-col  justify-between gap-4 p-6 pb-2 border bg-white border-slate-100 rounded-2xl cardShadow group hover:bg-gradient-to-br hover:bg-phicos-primary transition-all ease-in duration-200"
                             >
                                 <div>
                                     <h4 className="mb-2 font-medium group-hover:text-slate-50 text-xl text-phicos-primary">
@@ -138,9 +140,10 @@ const Index: FC = () => {
             {/* / Services */}
 
             {/* Why us */}
-            <section className="py-24 bg-slate-900 relative overflow-hidden">
-                <div className="container">
-                    <div className="text-center mb-24">
+            <section className="py-24 bg-slate-900 relative overflow-hidden ">
+                <div className="ecplise w-56 h-56 right-0 left-0 m-auto -bottom-10 blur-[200px] bg-phicos-accent/80 z-0 absolute"></div>
+                <div className="container relative z-1">
+                    <div className="text-center mb-16">
                         <h2 className="title font-semibold mb-2   text-white">
                             Mengapa memilih{" "}
                             <span className="bg-clip-text bg-gradient-to-tr from-phicos-primary to-phicos-accent text-transparent">
@@ -152,16 +155,20 @@ const Index: FC = () => {
                             contribute
                         </p> */}
                     </div>
-                    <div className="grid grid-cols-2 gap-48 items-center">
-                        <div className="w-full border">
-                            <img src="" alt="" />
+                    <div className="grid grid-cols-2 items-center gap-x-24">
+                        <div>
+                            <img
+                                src="/public/image.png"
+                                alt=""
+                                className="h-full w-full"
+                            />
                         </div>
                         <div className="w-full">
                             <ol className="list-decimal">
                                 {whyUs.map((item, i) => (
                                     <li
                                         key={i}
-                                        className="mb-4 group odd:me-14 even:ms-14 relative text-lg p-4  font-medium rounded-md bg-white bg-opacity-5 hover:bg-opacity-10 hover:scale-105 hover:cursor-pointer transition-transform duration-150 ease-in-out flex items-center"
+                                        className="mb-4 group odd:me-14 even:ms-14 relative text-lg p-3 font-medium rounded-md bg-white bg-opacity-5 hover:bg-opacity-10 hover:scale-105 hover:cursor-pointer transition-transform duration-150 ease-in-out flex items-center"
                                     >
                                         <span className="relative -left-8 font-extrabold text-5xl bg-clip-text bg-gradient-to-tr from-phicos-primary to-phicos-accent text-transparent top-0 bottom-0 shadow-phicos-primary">
                                             {i + 1}
