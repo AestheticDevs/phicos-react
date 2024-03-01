@@ -168,9 +168,9 @@ const Index: FC = () => {
                                 {whyUs.map((item, i) => (
                                     <li
                                         key={i}
-                                        className="mb-4 group odd:me-14 even:ms-14 relative text-lg p-3 font-medium rounded-md bg-white bg-opacity-5 hover:bg-opacity-10 hover:scale-105 hover:cursor-pointer transition-transform duration-150 ease-in-out flex items-center"
+                                        className="mb-4 group odd:me-14 even:ms-14 relative text-lg p-3 ps-1 font-medium rounded-md bg-white bg-opacity-5 hover:bg-opacity-10 hover:scale-105 hover:cursor-pointer transition-transform duration-150 ease-in-out flex items-center"
                                     >
-                                        <span className="relative -left-8 font-extrabold text-5xl bg-clip-text bg-gradient-to-tr from-phicos-primary to-phicos-accent text-transparent top-0 bottom-0 shadow-phicos-primary">
+                                        <span className="relative -left-5 font-extrabold text-5xl bg-clip-text bg-gradient-to-tr from-phicos-primary to-phicos-accent text-transparent top-0 bottom-0 shadow-phicos-primary">
                                             {i + 1}
                                         </span>
                                         <p className="text-base  text-slate-300 group-hover:text-slate-100">
