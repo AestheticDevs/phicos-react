@@ -1,12 +1,9 @@
 import HeroImage from "@/assets/image/landing_page_hero.png";
 import "../assets/css/global.css";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Autoplay } from "swiper/modules";
 import { FC } from "react";
 import { services } from "@/store/services";
-import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { whyUs } from "@/store/why-us";
 

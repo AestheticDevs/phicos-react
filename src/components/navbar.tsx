@@ -1,26 +1,16 @@
 import { FC, useEffect, useRef } from "react";
 import PhicosLogo from "@/assets/logo/phicos_logo.png";
-import { Link, NavLink } from "react-router-dom";
-import { useScroll } from "framer-motion";
-
-import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
 
 import {
     NavigationMenu,
     NavigationMenuContent,
-    NavigationMenuIndicator,
     NavigationMenuItem,
     NavigationMenuLink,
     NavigationMenuList,
     NavigationMenuTrigger,
-    NavigationMenuViewport,
     navigationMenuTriggerStyle
 } from "@/components/ui/navigation-menu";
-
-interface MenuListItem {
-    label: string;
-    path: string;
-}
 
 const Navbar: FC = () => {
     // const menuListItem: MenuListItem[] = [
@@ -69,7 +59,6 @@ const Navbar: FC = () => {
         }
     ];
 
-    const { scrollY } = useScroll();
     const navContainer = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -118,7 +107,7 @@ const Navbar: FC = () => {
                                     <NavigationMenuContent>
                                         <ul className="grid gap-3 p-4 md:w-[200px] lg:w-[300px]">
                                             {menuServices.map((item, i) => (
-                                                <li className="">
+                                                <li key={i} className="">
                                                     <NavigationMenuLink asChild>
                                                         <a
                                                             className="flex h-full w-full select-none flex-col justify-end p-3 no-underline outline-none focus:shadow-md bg-transparent hover:bg-slate-50 ease-in-out duration-150 font-light"
