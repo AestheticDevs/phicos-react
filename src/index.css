@@ -4,6 +4,8 @@
 
 @layer base {
   :root {
+
+
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
@@ -68,6 +70,10 @@
   }
 }
 
+.title {
+  font-size: 36px;
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -101,6 +107,5 @@
 }
 
 button {
-  min-width: 150px;
   @apply font-bold
 }

@@ -6,6 +6,9 @@ import "swiper/css/pagination";
 import { Autoplay } from "swiper/modules";
 import { FC } from "react";
 import { services } from "@/store/services";
+import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
+import { whyUs } from "@/store/why-us";
 
 const clientImg = [
     {
@@ -49,117 +52,188 @@ const clientImg = [
 const Index: FC = () => {
     return (
         <>
-            <section className="">
-                <div className="grid grid-cols-2 min-h-[600px] py-28 container mx-auto items-center">
+            <section className="bg-slate-900 relative overflow-hidden">
+                {/* <img
+                    src="https://img.freepik.com/free-vector/moire-pattern-background_53876-80499.jpg?t=st=1709173591~exp=1709177191~hmac=00f37dd583b675a8927539d745ee9a699fae4f51a585991de4ef2579b3dd3c17&w=1060"
+                    alt=""
+                    className="absolute top-0 left-0 w-full h-full object-cover mix-blend-luminosity z-0 opacity-5"
+                /> */}
+                <div className="grid grid-cols-2 min-h-[600px] py-28 container mx-auto items-center relative z-1">
                     <img
                         src={HeroImage}
                         alt="hero image"
-                        className="my-auto mx-auto order-1"
+                        className="my-auto ms-auto order-1"
                     />
-                    <div className="w-fit text-start hero-gradient">
-                        <h1 className="scroll-m-20 font-extrabold tracking-tight text-slate-800 text-7xl mb-8">
-                            Trust Your{" "}
+
+                    <div className="w-fit h-fit text-start hero-gradient">
+                        <p className=" relative mb-4 text-transparent bg-clip-text bg-gradient-to-tl from-phicos-primary to-phicos-accent">
+                            PHICOS GROUP
+                        </p>
+                        <h1 className="scroll-m-20 font-extrabold tracking-tight text-white text-7xl mb-8">
+                            Ideas for Better
                             <span className="bg-gradient-to-tl from-phicos-primary to-phicos-accent text-transparent bg-clip-text">
-                                Idea
-                            </span>{" "}
-                            to Us!
+                                {" "}
+                                Value
+                            </span>
                         </h1>
                         <div className="max-w-xl">
                             {/* <hr className="border-b-2 border-slate-800 w-16" /> */}
-                            <p className="leading-7 mt-4 text-slate-600 mb-8 text-xl opacity-60 ">
-                                We are a company with a full dedication to
-                                contribute ourselves in IT, Communication, and
-                                any other business problems. Share your ideas to
-                                Phicos, and you will get satisfaction from our
-                                best solutions.
+                            <p className="mt-4 text-white mb-8 text-lg opacity-70 font-light">
+                                Kami sepenuhnya berdedikasi untuk memberikan
+                                kontribusi dalam bidang IT. Bagikan ide-ide Anda
+                                kepada Phicos, dan Anda akan mendapatkan solusi
+                                terbaik dari kami.
                             </p>
                         </div>
-
-                        <button className="py-4 px-4 text-white bg-primary rounded-lg">
+                        <button className="py-4 px-4 w-40 text-white bg-gradient-to-tl from-phicos-primary to-phicos-accent rounded-lg drop-shadow-xl transition-all hover:-translate-y-1 duration-200">
                             Join Us
                         </button>
                     </div>
                 </div>
             </section>
 
+            {/* Services */}
             <section className="py-24  bg-slate-50">
                 <div className="container mx-auto">
-                    <div className="mb-16">
-                        <h2 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 mb-4">
-                            Our Services
+                    <div className="mb-24 text-center">
+                        <h2 className="title font-semibold mb-2">
+                            Solutions for better innovation.
                         </h2>
-                        <p className="leading-7 [&:not(:first-child)]:mt-6 text-slate-700 mb-8">
+                        <p className="text-slate-700 mb-8 text-sm opacity-50">
                             We are a company with a full dedication to
                             contribute
                         </p>
                     </div>
-                    <div className="grid grid-cols-3 gap-8">
+                    <div className="grid grid-cols-3 gap-4">
                         {services.map((service, index) => (
                             <div
+                                // to={""}
                                 key={index}
-                                className="gap-8 p-8 border bg-white border-slate-100 rounded-2xl cardShadow group hover:border-gray-200 hover:bg-gradient-to-br from-phicos-primary to-phicos-accent"
+                                className="flex flex-col  justify-between gap-4 p-6 border bg-white border-slate-100 rounded-2xl cardShadow group hover:bg-gradient-to-br hover:bg-phicos-primary transition-all ease-in duration-200"
                             >
-                                <div className="bg-black/5 w-fit rounded-lg transition">
+                                <div>
+                                    <h4 className="mb-2 font-medium group-hover:text-slate-50 text-xl text-phicos-primary">
+                                        {service.title}
+                                    </h4>
+                                    <p className="text-gray-400 group-hover:text-slate-50 text-sm leading-[150%]">
+                                        {service.description}
+                                    </p>
+                                </div>
+
+                                <div className="flex justify-between items-center">
+                                    <Link
+                                        to={""}
+                                        className="text-base font-bold text-slate-600 group-hover:text-white"
+                                    >
+                                        Read more
+                                    </Link>
                                     <img
                                         src={service.img}
                                         alt="softdev image"
-                                        className="w-20 h-20 mb-6"
+                                        className="w-20 h-20 float-right filter hue-rotate-45 group-hover:grayscale-0"
                                     />
-                                </div>
-                                <div>
-                                    <h4 className="mb-4 font-medium text-slate-800 group-hover:text-slate-50 text-xl">
-                                        {service.title}
-                                    </h4>
-                                    <p className="text-slate-700 group-hover:text-slate-50">
-                                        {service.description}
-                                    </p>
                                 </div>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
+            {/* / Services */}
 
-            <section className="py-16">
-                <div className="container mx-auto">
-                    <div className="mb-16">
-                        <h2 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 mb-8">
-                            Companies we work with
+            {/* Why us */}
+            <section className="py-24 bg-slate-900 relative overflow-hidden">
+                <div className="container">
+                    <div className="text-center mb-24">
+                        <h2 className="title font-semibold mb-2   text-white">
+                            Mengapa memilih{" "}
+                            <span className="bg-clip-text bg-gradient-to-tr from-phicos-primary to-phicos-accent text-transparent">
+                                Phicos Group?
+                            </span>{" "}
                         </h2>
-                        <p className="text-slate-700">
-                            Here are some of the outstanding organizations we
-                            have had the privilege to work with
-                        </p>
+                        {/* <p className="text-white mb-8 text-sm">
+                            We are a company with a full dedication to
+                            contribute
+                        </p> */}
                     </div>
-                    <div>
-                        <Swiper
-                            spaceBetween={100}
-                            slidesPerView={6}
-                            grabCursor={true}
-                            modules={[Autoplay]}
-                            autoplay={{
-                                delay: 2000,
-                                disableOnInteraction: false
-                            }}
-                        >
-                            {clientImg.map((client, index) => (
-                                <SwiperSlide key={index}>
-                                    <div className="flex flex-col items-center gap-2">
-                                        <img
-                                            src={client.src}
-                                            alt="kemendikbud"
-                                            className="w-full aspect-square object-contain bg-center"
-                                        />
-                                        <span className="text-slate-600">
-                                            {client.title}
+                    <div className="grid grid-cols-2 gap-48 items-center">
+                        <div className="w-full border">
+                            <img src="" alt="" />
+                        </div>
+                        <div className="w-full">
+                            <ol className="list-decimal">
+                                {whyUs.map((item, i) => (
+                                    <li
+                                        key={i}
+                                        className="mb-4 group odd:me-14 even:ms-14 relative text-lg p-4  font-medium rounded-md bg-white bg-opacity-5 hover:bg-opacity-10 hover:scale-105 hover:cursor-pointer transition-transform duration-150 ease-in-out flex items-center"
+                                    >
+                                        <span className="relative -left-8 font-extrabold text-5xl bg-clip-text bg-gradient-to-tr from-phicos-primary to-phicos-accent text-transparent top-0 bottom-0 shadow-phicos-primary">
+                                            {i + 1}
                                         </span>
-                                    </div>
-                                </SwiperSlide>
-                            ))}
-                        </Swiper>
+                                        <p className="text-base  text-slate-300 group-hover:text-slate-100">
+                                            {item.title}
+                                        </p>
+                                    </li>
+                                ))}
+                            </ol>
+                        </div>
                     </div>
                 </div>
             </section>
+            {/* / Why us */}
+
+            {/* Clients */}
+            <section className="py-24">
+                <div className="container mx-auto">
+                    <div className="mb-16 text-start">
+                        <h2 className="title font-semibold mb-2">
+                            Solutions for better innovation.
+                        </h2>
+                        <p className="text-slate-700 mb-8 text-sm opacity-50">
+                            We are a company with a full dedication to
+                            contribute
+                        </p>
+                    </div>
+                    <div className="grid grid-cols-5 gap-16 items-center">
+                        {clientImg.slice(0, 9).map((client, index) => (
+                            <div key={index} className="group">
+                                <div className="">
+                                    <img
+                                        src={client.src}
+                                        alt="kemendikbud"
+                                        className="w-full h-36 aspect-square object-contain bg-center transition-all ease-in filter grayscale group-hover:grayscale-0"
+                                    />
+                                    {/* <span className="text-slate-600">
+                                        {client.title}
+                                    </span> */}
+                                </div>
+                            </div>
+                        ))}
+                        <Link
+                            to={""}
+                            className="w-full h-24 mx-auto aspect-square bg-gradient-to-tr p-4 from-phicos-primary to-phicos-accent flex items-center justify-center rounded-lg "
+                        >
+                            <span className="text-white text-center whitespace-nowrap`">
+                                Lihat semua client
+                            </span>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill=""
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.5}
+                                stroke="currentColor"
+                                className="w-6 h-6 ms-2 text-white"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+                                />
+                            </svg>
+                        </Link>
+                    </div>
+                </div>
+            </section>
+            {/* / Clients */}
         </>
     );
 };

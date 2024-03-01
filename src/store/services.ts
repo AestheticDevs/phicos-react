@@ -15,31 +15,31 @@ export const services: Service[] = [
   {
     img: SoftdevImg,
     title: 'Software Development',
-    description: 'Provides development and support to information systems, based on the needs collected and documented by the system analyst.'
-  },
-  {
-    img: MulmedImg,
-    title: 'Multimedia',
-    description: 'Providing support for innovation and creation of multimedia content services in various forms to facilitate the delivery of information.'
+    description: 'Memberikan inovasi dan dukungan maksimal untuk sistem informasi, memanfaatkan kebutuhan yang teliti dikumpulkan dan didokumentasikan oleh analis sistem.'
   },
   {
     img: ServerImg,
     title: 'Networking Server',
-    description: 'Provides computer network communication support to ensure smooth operation and maximum performance for information system users.'
+    description: 'Mengoptimalkan kinerja sistem informasi dengan dukungan komunikasi jaringan komputer, memastikan operasi yang lancar dan pengalaman pengguna yang maksimal.'
+  },
+  {
+    img: MulmedImg,
+    title: 'Multimedia',
+    description: 'Mendukung kreasi inovatif layanan konten multimedia dalam beragam bentuk, mewujudkan penyampaian informasi dengan cara yang lebih menarik dan efektif.'
   },
   {
     img: WebMobileImg,
     title: 'Web & Mobile Development',
-    description: 'Quickly and efficiently building cutting-edge enterprise responsive Web and mobile experiences.'
+    description: 'Menghadirkan pengalaman Web dan mobile perusahaan yang paling mutakhir dengan cepat dan efisien.'
   },
   {
     img: GraphicDesignImg,
     title: 'Graphics Design',
-    description: 'Our creations are designed to convey your company’s unique personality and attract those who believe in the same vision as you.'
+    description: 'Karya kami dibuat untuk menggambarkan identitas unik perusahaan Anda, memikat mereka yang berbagi visi sejalan dengan Anda.'
   },
   {
     img: ConsultingImg,
     title: 'Technology Consulting',
-    description: 'Helps Advise Clients How To Best Use IT Practices To Achieve Their Business Goals By Managing And Implementing Strategies.'
+    description: 'Membantu klien mengoptimalkan penggunaan praktik TI guna meraih tujuan bisnis terbaik, dengan mengelola dan mengimplementasikan strategi yang tepat.'
   }
 ]
