@@ -7,6 +7,13 @@ import { services } from "@/store/services";
 import { Link } from "react-router-dom";
 import { whyUs } from "@/store/why-us";
 
+import {
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger
+} from "@/components/ui/tooltip";
+
 const clientImg = [
     {
         src: "https://phicos.co.id/uploads/images/client/e5d08ba6589d085b31232e744e1c47f9.png",
@@ -18,7 +25,7 @@ const clientImg = [
     },
     {
         src: "https://phicos.co.id/uploads/images/client/c0ba4c8db875e67a8b64c5db362d6929.png",
-        title: "Tasik Malaya"
+        title: "Tasikmalaya"
     },
     {
         src: "https://phicos.co.id/uploads/images/client/9323d07a29262d268bea65760b5e06b7.png",
@@ -65,9 +72,9 @@ const Index: FC = () => {
                     />
 
                     <div className="w-fit h-fit text-start hero-gradient">
-                        <p className=" relative mb-4 text-transparent bg-clip-text bg-gradient-to-tl from-phicos-primary to-phicos-accent">
+                        {/* <p className=" relative mb-4 text-transparent bg-clip-text bg-gradient-to-tl from-phicos-primary to-phicos-accent">
                             PHICOS GROUP
-                        </p>
+                        </p> */}
                         <h1 className="scroll-m-20 font-extrabold tracking-tight text-white text-7xl mb-8">
                             Ideas for Better
                             <span className="bg-gradient-to-tl from-phicos-primary to-phicos-accent text-transparent bg-clip-text">
@@ -92,8 +99,13 @@ const Index: FC = () => {
             </section>
 
             {/* Services */}
-            <section className="py-24  bg-slate-50">
-                <div className="container mx-auto">
+            <section className="py-24 relative rounded-t-[48px] overflow-hidden -mt-12 bg-white">
+                <img
+                    src="/texture.png"
+                    alt=""
+                    className="absolute top-0 left-0 z-0 w-full h-full object-cover opacity-60"
+                />
+                <div className="container mx-auto relative">
                     <div className="mb-24 text-center">
                         <h2 className="title font-semibold mb-2">
                             Solutions for better innovation.
@@ -186,11 +198,11 @@ const Index: FC = () => {
             {/* / Why us */}
 
             {/* Clients */}
-            <section className="py-24">
-                <div className="container mx-auto">
+            <section className="py-24 overflow-hidden relative">
+                <div className="container mx-auto relative">
                     <div className="mb-16 text-start">
                         <h2 className="title font-semibold mb-2">
-                            Solutions for better innovation.
+                            Our Happy Clients{" "}
                         </h2>
                         <p className="text-slate-700 mb-8 text-sm opacity-50">
                             We are a company with a full dedication to
@@ -199,19 +211,30 @@ const Index: FC = () => {
                     </div>
                     <div className="grid grid-cols-5 gap-16 items-center">
                         {clientImg.slice(0, 9).map((client, index) => (
-                            <div key={index} className="group">
-                                <div className="">
-                                    <img
-                                        src={client.src}
-                                        alt="kemendikbud"
-                                        className="w-full h-36 aspect-square object-contain bg-center transition-all ease-in filter grayscale group-hover:grayscale-0"
-                                    />
-                                    {/* <span className="text-slate-600">
-                                        {client.title}
-                                    </span> */}
-                                </div>
-                            </div>
+                            <TooltipProvider>
+                                <Tooltip>
+                                    <TooltipTrigger
+                                        key={index}
+                                        className="group cursor-pointer"
+                                    >
+                                        <div>
+                                            <img
+                                                src={client.src}
+                                                alt={client.title}
+                                                className="w-full h-36 aspect-square object-contain bg-center transition-all ease-in filter grayscale group-hover:grayscale-0"
+                                            />
+                                        </div>
+
+                                        <TooltipContent>
+                                            <p className="text-sm font-normal">
+                                                {client.title}
+                                            </p>
+                                        </TooltipContent>
+                                    </TooltipTrigger>
+                                </Tooltip>
+                            </TooltipProvider>
                         ))}
+
                         <Link
                             to={""}
                             className="w-full h-24 mx-auto aspect-square bg-gradient-to-tr p-4 from-phicos-primary to-phicos-accent flex items-center justify-center rounded-lg "
