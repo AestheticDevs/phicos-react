@@ -1,5 +1,4 @@
 import { Mail, MapPin, Phone } from "lucide-react";
-import WavePattern from "./wavepattern";
 import PhicosLogoFooter from "@/assets/image/logo-phicos-footer.png";
 const Footer = () => {
     return (
