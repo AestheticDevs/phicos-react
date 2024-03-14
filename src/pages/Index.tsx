@@ -6,6 +6,7 @@ import { FC } from "react";
 import { services } from "@/store/services";
 import { Link } from "react-router-dom";
 import { whyUs } from "@/store/why-us";
+import ImagePhicosGroup from "/image.png";
 
 import {
     Tooltip,
@@ -58,7 +59,7 @@ const Index: FC = () => {
         <>
             <section className="bg-slate-900 relative overflow-hidden h-screen">
                 <img
-                    src="/public/bg-overlay.png"
+                    src="/bg-overlay.png"
                     alt=""
                     className="absolute top-0 left-0 w-full h-full object-cover mix-blend-luminosity z-0 opacity-5"
                 />
@@ -170,7 +171,7 @@ const Index: FC = () => {
                     <div className="grid grid-cols-2 items-center gap-x-24">
                         <div>
                             <img
-                                src="/public/image.png"
+                                src={ImagePhicosGroup}
                                 alt=""
                                 className="h-full w-full"
                             />

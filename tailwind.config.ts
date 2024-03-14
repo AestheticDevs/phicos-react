@@ -2,9 +2,9 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/**/*.{ts,tsx}',
   ],
   theme: {
@@ -75,7 +75,10 @@ module.exports = {
       fontFamily: {
         heading: ["Poppins", "sans-serif"],
         paragraph: ["Hind", "sans-serif"],
-      }
+      },
+      backgroundImage: {
+        'image': "url('/image.png')",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
