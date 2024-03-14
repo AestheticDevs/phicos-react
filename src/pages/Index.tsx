@@ -106,14 +106,14 @@ const Index: FC = () => {
                     className="absolute top-0 left-0 z-0 w-full h-full object-cover opacity-60"
                 />
                 <div className="container mx-auto relative">
-                    <div className="mb-24 text-center">
+                    <div className="mb-16 text-center">
                         <h2 className="title font-semibold mb-2">
                             Solutions for better innovation.
                         </h2>
-                        <p className="text-slate-700 mb-8 text-sm opacity-50">
+                        {/* <p className="text-slate-700 mb-8 text-sm opacity-50">
                             We are a company with a full dedication to
                             contribute
-                        </p>
+                        </p> */}
                     </div>
                     <div className="grid grid-cols-3 gap-4">
                         {services.map((service, index) => (
@@ -196,6 +196,64 @@ const Index: FC = () => {
                 </div>
             </section>
             {/* / Why us */}
+
+            {/* About Us */}
+            <section className="bg-phicos-primary relative overflow-hidden flex h-[400px]">
+                <div className=" w-2/5 h-full">
+                    <img
+                        src="https://plus.unsplash.com/premium_photo-1677529494239-682591edd525?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt=""
+                        className="h-full w-full object-cover"
+                    />
+                </div>
+                <div className="w-3/5 p-16 flex flex-col justify-center">
+                    <div className="mb-4">
+                        <div>
+                            <p className="text-slate-700 mb-3 text-sm font-bold rounded-md uppercase">
+                                About Us{" "}
+                            </p>
+                        </div>
+                        <h2 className="text-3xl font-semibold text-white">
+                            Our Experience Gives You Evidence.
+                        </h2>
+                    </div>
+                    <p className="text-white">
+                        Phicos Group unggul karena telah menjaring puluhan
+                        instansi, baik Pemerintah, Swasta, maupun Daerah. Kami
+                        terbukti telah memberikan solusi terbaik kepada klien
+                        kami, dan kami akan selalu memberikan dedikasi penuh
+                        untuk menyelesaikan permasalahan bisnis Anda.
+                    </p>
+                </div>
+            </section>
+            {/* / About Us */}
+
+            {/* Overview */}
+            <section className="bg-slate-800 relative overflow-hidden flex h-[400px]">
+                <div className=" w-2/5 h-full order-2">
+                    <img
+                        src="https://plus.unsplash.com/premium_photo-1677529494239-682591edd525?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt=""
+                        className="h-full w-full object-cover"
+                    />
+                </div>
+                <div className="w-3/5 p-16 flex flex-col justify-center">
+                    <div className="mb-4">
+                        <h2 className="text-3xl font-semibold text-white">
+                            Overview{" "}
+                        </h2>
+                    </div>
+                    <p className="text-white/75">
+                        Phicos Group adalah perusahaan yang berdedikasi penuh
+                        untuk berkontribusi dalam bidang IT, Komunikasi, dan
+                        masalah bisnis lainnya. Dengan fokus utama pada inovasi
+                        teknologi dan komitmen terhadap keunggulan, Phicos Group
+                        datang dengan solusi-solusi yang mendukung perkembangan
+                        dan transformasi digital.
+                    </p>
+                </div>
+            </section>
+            {/* / Overview */}
 
             {/* Clients */}
             <section className="py-24 overflow-hidden relative">
