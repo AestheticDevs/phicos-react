@@ -1,6 +1,6 @@
 import { FC, useEffect, useRef } from "react";
 import PhicosLogo from "@/assets/logo/phicos_logo.png";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 import {
     NavigationMenu,
@@ -85,6 +85,7 @@ const Navbar: FC = () => {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
+    
 
     return (
         <nav
@@ -136,7 +137,7 @@ const Navbar: FC = () => {
                                         to="/works"
                                         className={navigationMenuTriggerStyle()}
                                     >
-                                        <NavigationMenuLink>
+                                        <NavigationMenuLink >
                                             Works
                                         </NavigationMenuLink>
                                     </Link>
@@ -153,7 +154,7 @@ const Navbar: FC = () => {
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
                                     <Link
-                                        to="/aboutus"
+                                        to="/about"
                                         className={navigationMenuTriggerStyle()}
                                     >
                                         <NavigationMenuLink>

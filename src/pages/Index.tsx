@@ -121,7 +121,7 @@ const Index: FC = () => {
                             <div
                                 // to={""}
                                 key={index}
-                                className="flex flex-col  justify-between gap-4 p-6 pb-2 border bg-white border-slate-100 rounded-2xl cardShadow group hover:bg-gradient-to-br hover:bg-phicos-primary transition-all ease-in duration-200"
+                                className="flex flex-col justify-between gap-4 p-6 pb-2 border bg-white border-slate-100 rounded-2xl cardShadow group hover:bg-gradient-to-br hover:bg-phicos-primary transition-all ease-in duration-200"
                             >
                                 <div>
                                     <h4 className="mb-2 font-medium group-hover:text-slate-50 text-xl text-phicos-primary">
@@ -296,7 +296,7 @@ const Index: FC = () => {
 
                         <Link
                             to={""}
-                            className="w-full h-24 mx-auto aspect-square bg-gradient-to-tr p-4 from-phicos-primary to-phicos-accent flex items-center justify-center rounded-lg "
+                            className="w-full h-24 mx-auto aspect-square bg-gradient-to-tr p-4 from-phicos-primary to-phicos-accent flex items-center justify-center rounded-lg hover:bg-opacity-10 hover:scale-105 hover:cursor-pointer transition-transform duration-150 ease-in-out"
                         >
                             <span className="text-white text-center whitespace-nowrap`">
                                 Lihat semua client

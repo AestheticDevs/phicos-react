@@ -8,6 +8,7 @@ import Index from './pages/Index.tsx'
 import Work from './pages/Work.tsx'
 import Career from './pages/Career.tsx'
 import About from './pages/About.tsx'
+import Structure from './pages/Structure.tsx'
 
 const router = createBrowserRouter([
   {
@@ -23,12 +24,16 @@ const router = createBrowserRouter([
         element: <Work />
       },
       {
-        path: 'careers',
+        path: 'career',
         element: <Career />
       },
       {
         path: 'about',
         element: <About />
+      },
+      {
+        path: 'structure',
+        element: <Structure />
       }
     ]
   }
