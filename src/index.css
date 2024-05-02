@@ -109,3 +109,12 @@
 button {
   @apply font-bold
 }
+
+.swiper-pagination {
+  position: relative !important;
+  margin-top: 16px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: hsl(var(--primary)) !important;
+}

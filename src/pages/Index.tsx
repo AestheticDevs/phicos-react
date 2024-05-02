@@ -1,13 +1,19 @@
 import HeroImage from "@/assets/image/landing_page_hero.png";
 import Overlay from "/bg-overlay.png";
 import "../assets/css/global.css";
-import "swiper/css";
-import "swiper/css/pagination";
+
 import { FC } from "react";
 import { services } from "@/store/services";
 import { Link } from "react-router-dom";
 import { whyUs } from "@/store/why-us";
 import ImagePhicosGroup from "/image.png";
+
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
 
 import {
     Tooltip,
@@ -15,6 +21,8 @@ import {
     TooltipProvider,
     TooltipTrigger
 } from "@/components/ui/tooltip";
+import { Calendar } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const clientImg = [
     {
@@ -58,7 +66,7 @@ const clientImg = [
 const Index: FC = () => {
     return (
         <>
-            <section className="bg-slate-900 relative overflow-hidden h-screen">
+            <section className="bg-slate-900 relative overflow-hidden h-fit lg:h-screen">
                 <img
                     src={Overlay}
                     alt=""
@@ -66,18 +74,18 @@ const Index: FC = () => {
                 />
 
                 <div className="ecplise w-48 h-48 right-0 left-0 mx-auto -bottom-10 blur-[200px] bg-phicos-primary z-2 absolute"></div>
-                <div className="grid grid-cols-2 min-h-[600px] py-28 container mx-auto items-center relative z-1">
+                <div className="grid grid-cols-1 md:grid-cols-2 min-h-[600px] py-28 container mx-auto items-center relative z-1">
                     <img
                         src={HeroImage}
                         alt="hero image"
-                        className="my-auto ms-auto order-1"
+                        className="my-auto ms-auto order-1 hidden md:block"
                     />
 
-                    <div className="w-fit h-fit text-start hero-gradient">
+                    <div className="w-fit h-fit text-center md:text-start hero-gradient">
                         {/* <p className=" relative mb-4 text-transparent bg-clip-text bg-gradient-to-tl from-phicos-primary to-phicos-accent">
                             PHICOS GROUP
                         </p> */}
-                        <h1 className="scroll-m-20 font-extrabold tracking-tight text-white text-7xl mb-8">
+                        <h1 className="scroll-m-20 font-extrabold tracking-tight text-white text-4xl lg:text-7xl mb-8 leading-normal">
                             Ideas for Better
                             <span className="bg-gradient-to-tl from-phicos-primary to-phicos-accent text-transparent bg-clip-text">
                                 {" "}
@@ -101,7 +109,7 @@ const Index: FC = () => {
             </section>
 
             {/* Services */}
-            <section className="py-24 relative rounded-t-[48px] overflow-hidden -mt-12 bg-white">
+            <section className="py-10 lg:py-24 relative rounded-t-[48px] overflow-hidden -mt-12 bg-white">
                 <img
                     src="/texture.png"
                     alt=""
@@ -109,7 +117,7 @@ const Index: FC = () => {
                 />
                 <div className="container mx-auto relative">
                     <div className="mb-16 text-center">
-                        <h2 className="title font-semibold mb-2">
+                        <h2 className="text-3xl lg:text-4xl font-semibold mb-2">
                             Solutions for better innovation.
                         </h2>
                         {/* <p className="text-slate-700 mb-8 text-sm opacity-50">
@@ -117,7 +125,7 @@ const Index: FC = () => {
                             contribute
                         </p> */}
                     </div>
-                    <div className="grid grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         {services.map((service, index) => (
                             <div
                                 // to={""}
@@ -154,11 +162,11 @@ const Index: FC = () => {
             {/* / Services */}
 
             {/* Why us */}
-            <section className="py-24 bg-slate-900 relative overflow-hidden ">
+            <section className="py-16 lg:py-24 bg-slate-900 relative overflow-hidden ">
                 <div className="ecplise w-56 h-56 right-0 left-0 m-auto -bottom-10 blur-[200px] bg-phicos-accent/80 z-0 absolute"></div>
                 <div className="container relative z-1">
                     <div className="text-center mb-16">
-                        <h2 className="title font-semibold mb-2   text-white">
+                        <h2 className="text-2xl lg:text-4xl font-semibold mb-2   text-white">
                             Mengapa memilih{" "}
                             <span className="bg-clip-text bg-gradient-to-tr from-phicos-primary to-phicos-accent text-transparent">
                                 Phicos Group?
@@ -169,12 +177,12 @@ const Index: FC = () => {
                             contribute
                         </p> */}
                     </div>
-                    <div className="grid grid-cols-2 items-center gap-x-24">
+                    <div className="grid lg:grid-cols-2 px-4 lg:px-16 items-center gap-x-24 relative">
                         <div>
                             <img
                                 src={ImagePhicosGroup}
                                 alt=""
-                                className="h-full w-full"
+                                className="h-full w-full hidden lg:block"
                             />
                         </div>
                         <div className="w-full">
@@ -182,7 +190,7 @@ const Index: FC = () => {
                                 {whyUs.map((item, i) => (
                                     <li
                                         key={i}
-                                        className="mb-4 group odd:me-14 even:ms-14 relative text-lg p-3 ps-1 font-medium rounded-md bg-white bg-opacity-5 hover:bg-opacity-10 hover:scale-105 hover:cursor-pointer transition-transform duration-150 ease-in-out flex items-center"
+                                        className="mb-4 group md:odd:me-14 md:even:ms-14 relative text-lg p-3 ps-1 font-medium rounded-md bg-white bg-opacity-5 hover:bg-opacity-10 hover:scale-105 hover:cursor-pointer transition-transform duration-150 ease-in-out flex items-center"
                                     >
                                         <span className="relative -left-5 font-extrabold text-5xl bg-clip-text bg-gradient-to-tr from-phicos-primary to-phicos-accent text-transparent top-0 bottom-0 shadow-phicos-primary">
                                             {i + 1}
@@ -200,15 +208,15 @@ const Index: FC = () => {
             {/* / Why us */}
 
             {/* About Us */}
-            <section className="bg-phicos-primary relative overflow-hidden flex h-[400px]">
-                <div className=" w-2/5 h-full">
+            <section className="bg-phicos-primary relative overflow-hidden flex flex-col md:flex-row h-fit md:h-[400px]">
+                <div className="w-full md:w-2/5 h-full">
                     <img
                         src="https://plus.unsplash.com/premium_photo-1677529494239-682591edd525?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                         alt=""
                         className="h-full w-full object-cover"
                     />
                 </div>
-                <div className="w-3/5 p-16 flex flex-col justify-center">
+                <div className="w-full md:w-3/5 p-8 md:p-16 flex flex-col justify-center">
                     <div className="mb-4">
                         <div>
                             <p className="text-slate-700 mb-3 text-sm font-bold rounded-md uppercase">
@@ -219,7 +227,7 @@ const Index: FC = () => {
                             Our Experience Gives You Evidence.
                         </h2>
                     </div>
-                    <p className="text-white">
+                    <p className="text-white text-sm">
                         Phicos Group unggul karena telah menjaring puluhan
                         instansi, baik Pemerintah, Swasta, maupun Daerah. Kami
                         terbukti telah memberikan solusi terbaik kepada klien
@@ -231,21 +239,21 @@ const Index: FC = () => {
             {/* / About Us */}
 
             {/* Overview */}
-            <section className="bg-slate-800 relative overflow-hidden flex h-[400px]">
-                <div className=" w-2/5 h-full order-2">
+            <section className="bg-slate-800 relative overflow-hidden flex flex-col md:flex-row h-fit md:h-[400px]">
+                <div className="w-full md:w-2/5 h-full md:order-2">
                     <img
                         src="https://plus.unsplash.com/premium_photo-1677529494239-682591edd525?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                         alt=""
                         className="h-full w-full object-cover"
                     />
                 </div>
-                <div className="w-3/5 p-16 flex flex-col justify-center">
+                <div className="w-full md:w-3/5 p-8 md:p-16 flex flex-col justify-center">
                     <div className="mb-4">
                         <h2 className="text-3xl font-semibold text-white">
                             Overview{" "}
                         </h2>
                     </div>
-                    <p className="text-white/75">
+                    <p className="text-white/75 text-sm">
                         Phicos Group adalah perusahaan yang berdedikasi penuh
                         untuk berkontribusi dalam bidang IT, Komunikasi, dan
                         masalah bisnis lainnya. Dengan fokus utama pada inovasi
@@ -257,19 +265,296 @@ const Index: FC = () => {
             </section>
             {/* / Overview */}
 
+            {/* Berita */}
+            <section className="center">
+                <div className="">
+                    <div className="pt-8 md:pt-20 mb-5 text-start container-fluid lg:bg-slate-100 h-fit md:h-[300px]">
+                        <h2 className="title font-semibold mb-2 text-phicos-primary text-center">
+                            <span className="text-3xl md:text-4xl bg-clip-text bg-gradient-to-tr from-phicos-primary to-phicos-accent text-transparent">
+                                Berita
+                            </span>{" "}
+                        </h2>
+                        {/* <p className="text-slate-700 mb-8 text-sm opacity-50">
+                            We are a company with a full dedication to
+                            contribute
+                        </p> */}
+                    </div>
+
+                    {/* DISPLAY Desktop */}
+                    <div className="hidden md:block">
+                        <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative w-full -top-24 gap-8 items-center">
+                            <div>
+                                <img
+                                    src="https://images.unsplash.com/photo-1714182356074-99c7c843e197?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNXx8fGVufDB8fHx8fA%3D%3D"
+                                    alt=""
+                                    className="h-48 object-cover w-full mb-3"
+                                />
+                                <div className="flex gap-1 py-1 items-center text-slate-400 mb-1 text-sm">
+                                    {/* &#x2022; */}
+                                    <Calendar height={14} />
+                                    <span>20 Januari 2022</span>
+                                </div>
+                                <div>
+                                    <h4 className="font-bold text-lg text-slate-700 mb-2 line-clamp-2">
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Id, iusto.
+                                    </h4>
+                                    <p className="text-base opacity-60 line-clamp-4">
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Explicabo dolore enim
+                                        nulla eos fuga similique voluptate, quam
+                                        natus! Tempora, quas tenetur! Sit, iste
+                                        dicta.
+                                    </p>
+                                    <a
+                                        href=""
+                                        className="text-phicos-primary font-bold text-sm mt-3 block"
+                                    >
+                                        Selengkapnya
+                                    </a>
+                                </div>
+                            </div>
+                            <div>
+                                <img
+                                    src="https://images.unsplash.com/photo-1714182356074-99c7c843e197?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNXx8fGVufDB8fHx8fA%3D%3D"
+                                    alt=""
+                                    className="h-48 object-cover w-full mb-3"
+                                />
+                                <div className="flex gap-1 py-1 items-center text-slate-400 mb-1 text-sm">
+                                    {/* &#x2022; */}
+                                    <Calendar height={14} />
+                                    <span>20 Januari 2022</span>
+                                </div>
+                                <div>
+                                    <h4 className="font-bold text-lg text-slate-700 mb-2 line-clamp-2">
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Id, iusto.
+                                    </h4>
+                                    <p className="text-base opacity-60 line-clamp-4">
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Explicabo dolore enim
+                                        nulla eos fuga similique voluptate, quam
+                                        natus! Tempora, quas tenetur! Sit, iste
+                                        dicta.
+                                    </p>
+                                    <a
+                                        href=""
+                                        className="text-phicos-primary font-bold text-sm mt-3 block"
+                                    >
+                                        Selengkapnya
+                                    </a>
+                                </div>
+                            </div>
+                            <div>
+                                <img
+                                    src="https://images.unsplash.com/photo-1714182356074-99c7c843e197?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNXx8fGVufDB8fHx8fA%3D%3D"
+                                    alt=""
+                                    className="h-48 object-cover w-full mb-3"
+                                />
+                                <div className="flex gap-1 py-1 items-center text-slate-400 mb-1 text-sm">
+                                    {/* &#x2022; */}
+                                    <Calendar height={14} />
+                                    <span>20 Januari 2022</span>
+                                </div>
+                                <div>
+                                    <h4 className="font-bold text-lg text-slate-700 mb-2 line-clamp-2">
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Id, iusto.
+                                    </h4>
+                                    <p className="text-base opacity-60 line-clamp-4">
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Explicabo dolore enim
+                                        nulla eos fuga similique voluptate, quam
+                                        natus! Tempora, quas tenetur! Sit, iste
+                                        dicta.
+                                    </p>
+                                    <a
+                                        href=""
+                                        className="text-phicos-primary font-bold text-sm mt-3 block"
+                                    >
+                                        Selengkapnya
+                                    </a>
+                                </div>
+                            </div>
+                            <div>
+                                <img
+                                    src="https://images.unsplash.com/photo-1714182356074-99c7c843e197?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNXx8fGVufDB8fHx8fA%3D%3D"
+                                    alt=""
+                                    className="h-48 object-cover w-full mb-3"
+                                />
+                                <div className="flex gap-1 py-1 items-center text-slate-400 mb-1 text-sm">
+                                    {/* &#x2022; */}
+                                    <Calendar height={14} />
+                                    <span>20 Januari 2022</span>
+                                </div>
+                                <div>
+                                    <h4 className="font-bold text-lg text-slate-700 mb-2 line-clamp-2">
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Id, iusto.
+                                    </h4>
+                                    <p className="text-base opacity-60 line-clamp-4">
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Explicabo dolore enim
+                                        nulla eos fuga similique voluptate, quam
+                                        natus! Tempora, quas tenetur! Sit, iste
+                                        dicta.
+                                    </p>
+                                    <a
+                                        href=""
+                                        className="text-phicos-primary font-bold text-sm mt-3 block"
+                                    >
+                                        Selengkapnya
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="container text-center">
+                            <Button className="rounded-full px-8 bg-gradient-to-tr from-phicos-primary to-phicos-accent">
+                                Lihat semua
+                            </Button>
+                        </div>
+                    </div>
+                    {/* / DISPLAY Desktop */}
+
+                    {/* DISPLAY Mobile */}
+                    <div className="block md:hidden container">
+                        <Swiper
+                            // install Swiper modules
+                            modules={[Navigation, Pagination, Scrollbar, A11y]}
+                            spaceBetween={50}
+                            slidesPerView={1}
+                            navigation
+                            pagination={{ clickable: true }}
+                            scrollbar={{ draggable: true }}
+                        >
+                            <SwiperSlide>
+                                <div>
+                                    <img
+                                        src="https://images.unsplash.com/photo-1714182356074-99c7c843e197?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNXx8fGVufDB8fHx8fA%3D%3D"
+                                        alt=""
+                                        className="h-48 object-cover w-full mb-3"
+                                    />
+                                    <div className="flex gap-1 py-1 items-center text-slate-400 mb-1 text-sm">
+                                        {/* &#x2022; */}
+                                        <Calendar height={14} />
+                                        <span>20 Januari 2022</span>
+                                    </div>
+                                    <div>
+                                        <h4 className="font-bold text-lg text-slate-700 mb-2 line-clamp-2">
+                                            Lorem ipsum dolor sit amet
+                                            consectetur adipisicing elit. Id,
+                                            iusto.
+                                        </h4>
+                                        <p className="text-base opacity-60 line-clamp-4">
+                                            Lorem ipsum dolor sit amet
+                                            consectetur adipisicing elit.
+                                            Explicabo dolore enim nulla eos fuga
+                                            similique voluptate, quam natus!
+                                            Tempora, quas tenetur! Sit, iste
+                                            dicta.
+                                        </p>
+                                        <a
+                                            href=""
+                                            className="text-phicos-primary font-bold text-sm mt-3 block"
+                                        >
+                                            Selengkapnya
+                                        </a>
+                                    </div>
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div>
+                                    <img
+                                        src="https://images.unsplash.com/photo-1714182356074-99c7c843e197?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNXx8fGVufDB8fHx8fA%3D%3D"
+                                        alt=""
+                                        className="h-48 object-cover w-full mb-3"
+                                    />
+                                    <div className="flex gap-1 py-1 items-center text-slate-400 mb-1 text-sm">
+                                        {/* &#x2022; */}
+                                        <Calendar height={14} />
+                                        <span>20 Januari 2022</span>
+                                    </div>
+                                    <div>
+                                        <h4 className="font-bold text-lg text-slate-700 mb-2 line-clamp-2">
+                                            Lorem ipsum dolor sit amet
+                                            consectetur adipisicing elit. Id,
+                                            iusto.
+                                        </h4>
+                                        <p className="text-base opacity-60 line-clamp-4">
+                                            Lorem ipsum dolor sit amet
+                                            consectetur adipisicing elit.
+                                            Explicabo dolore enim nulla eos fuga
+                                            similique voluptate, quam natus!
+                                            Tempora, quas tenetur! Sit, iste
+                                            dicta.
+                                        </p>
+                                        <a
+                                            href=""
+                                            className="text-phicos-primary font-bold text-sm mt-3 block"
+                                        >
+                                            Selengkapnya
+                                        </a>
+                                    </div>
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div>
+                                    <img
+                                        src="https://images.unsplash.com/photo-1714182356074-99c7c843e197?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNXx8fGVufDB8fHx8fA%3D%3D"
+                                        alt=""
+                                        className="h-48 object-cover w-full mb-3"
+                                    />
+                                    <div className="flex gap-1 py-1 items-center text-slate-400 mb-1 text-sm">
+                                        {/* &#x2022; */}
+                                        <Calendar height={14} />
+                                        <span>20 Januari 2022</span>
+                                    </div>
+                                    <div>
+                                        <h4 className="font-bold text-lg text-slate-700 mb-2 line-clamp-2">
+                                            Lorem ipsum dolor sit amet
+                                            consectetur adipisicing elit. Id,
+                                            iusto.
+                                        </h4>
+                                        <p className="text-base opacity-60 line-clamp-4">
+                                            Lorem ipsum dolor sit amet
+                                            consectetur adipisicing elit.
+                                            Explicabo dolore enim nulla eos fuga
+                                            similique voluptate, quam natus!
+                                            Tempora, quas tenetur! Sit, iste
+                                            dicta.
+                                        </p>
+                                        <a
+                                            href=""
+                                            className="text-phicos-primary font-bold text-sm mt-3 block"
+                                        >
+                                            Selengkapnya
+                                        </a>
+                                    </div>
+                                </div>
+                            </SwiperSlide>
+                        </Swiper>
+                    </div>
+                    {/* / DISPLAY Mobile */}
+                </div>
+            </section>
+            {/* / Berita */}
+
             {/* Clients */}
             <section className="py-24 overflow-hidden relative">
                 <div className="container mx-auto relative">
-                    <div className="mb-16 text-start">
-                        <h2 className="title font-semibold mb-2">
-                            Our Happy Clients{" "}
+                    <div className="mb-16 text-center md:text-start">
+                        <h2 className="text-3xl md:text-4xl font-semibold mb-2">
+                            Our{" "}
+                            <span className="bg-clip-text bg-gradient-to-tr from-phicos-primary to-phicos-accent text-transparent">
+                                Clients
+                            </span>{" "}
                         </h2>
                         <p className="text-slate-700 mb-8 text-sm opacity-50">
                             We are a company with a full dedication to
                             contribute
                         </p>
                     </div>
-                    <div className="grid grid-cols-5 gap-16 items-center">
+                    <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-16 items-center">
                         {clientImg.slice(0, 9).map((client, index) => (
                             <TooltipProvider>
                                 <Tooltip>
@@ -281,7 +566,7 @@ const Index: FC = () => {
                                             <img
                                                 src={client.src}
                                                 alt={client.title}
-                                                className="w-full h-36 aspect-square object-contain bg-center transition-all ease-in filter grayscale group-hover:grayscale-0"
+                                                className="h-20 md:h-32 w-full aspect-square object-contain bg-center transition-all ease-in filter grayscale group-hover:grayscale-0"
                                             />
                                         </div>
 
@@ -297,25 +582,11 @@ const Index: FC = () => {
 
                         <Link
                             to={""}
-                            className="w-full h-24 mx-auto aspect-square bg-gradient-to-tr p-4 from-phicos-primary to-phicos-accent flex items-center justify-center rounded-lg "
+                            className="w-24 md:w-full h-24 mx-auto aspect-square bg-gradient-to-tr p-4 from-phicos-primary to-phicos-accent flex flex-col items-center justify-center rounded-lg hover:bg-slate-700"
                         >
-                            <span className="text-white text-center whitespace-nowrap`">
+                            <span className="text-white text-center text-sm font-medium">
                                 Lihat semua client
                             </span>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill=""
-                                viewBox="0 0 24 24"
-                                strokeWidth={1.5}
-                                stroke="currentColor"
-                                className="w-6 h-6 ms-2 text-white"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
-                                />
-                            </svg>
                         </Link>
                     </div>
                 </div>
