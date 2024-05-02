@@ -55,7 +55,9 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="my-4 flex flex-col gap-4 mt-auto w-full md:w-1/3">
-                        <p className="text-slate-50 text-xl">Contact Us</p>
+                        <p className="text-slate-50 text-xl font-bold">
+                            Contact Us
+                        </p>
                         <div className="flex">
                             {/* <MapPin className="text-phicos-primary" /> */}
                             <span className="text-white/80">

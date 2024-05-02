@@ -74,7 +74,7 @@ const Index: FC = () => {
                 />
 
                 <div className="ecplise w-48 h-48 right-0 left-0 mx-auto -bottom-10 blur-[200px] bg-phicos-primary z-2 absolute"></div>
-                <div className="grid grid-cols-1 md:grid-cols-2 min-h-[600px] py-28 container mx-auto items-center relative z-1">
+                <div className="grid grid-cols-1 md:grid-cols-2 min-h-[600px] py-28 container items-center relative z-1">
                     <img
                         src={HeroImage}
                         alt="hero image"
@@ -268,7 +268,7 @@ const Index: FC = () => {
             {/* Berita */}
             <section className="center">
                 <div className="">
-                    <div className="pt-8 md:pt-20 mb-5 text-start container-fluid lg:bg-slate-100 h-fit md:h-[300px]">
+                    <div className="pt-8 md:pt-20 mb-5 text-start container-fluid lg:bg-slate-200 h-fit md:h-[300px]">
                         <h2 className="title font-semibold mb-2 text-phicos-primary text-center">
                             <span className="text-3xl md:text-4xl bg-clip-text bg-gradient-to-tr from-phicos-primary to-phicos-accent text-transparent">
                                 Berita
@@ -282,7 +282,7 @@ const Index: FC = () => {
 
                     {/* DISPLAY Desktop */}
                     <div className="hidden md:block">
-                        <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative w-full -top-24 gap-8 items-center">
+                        <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative w-full -top-24 gap-16 items-center">
                             <div>
                                 <img
                                     src="https://images.unsplash.com/photo-1714182356074-99c7c843e197?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNXx8fGVufDB8fHx8fA%3D%3D"
