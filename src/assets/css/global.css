@@ -1,7 +1,11 @@
 .cardShadow {
-  box-shadow:0px 0px 80px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.05);
 }
 
 .navShadow {
- box-shadow: 20px 0px 20px rgba(0, 0, 0, 0.07);
+  box-shadow: 20px 0px 20px rgba(0, 0, 0, 0.07);
+}
+
+nav .active {
+  @apply text-phicos-primary font-semibold
 }

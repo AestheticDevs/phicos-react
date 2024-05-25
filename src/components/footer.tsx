@@ -36,19 +36,19 @@ const Footer = () => {
                         <div className="flex gap-2 items-center mt-4">
                             <a
                                 href=""
-                                className="h-10 w-10 p-3 flex items-center justify-center rounded-full bg-white hover:bg-phicos-primary transition"
+                                className="h-10 w-10 p-3 flex items-center justify-center rounded-full bg-white hover:bg-phicos-primary hover:scale-105 hover:text-white transition"
                             >
                                 <FacebookIcon />
                             </a>
                             <a
                                 href=""
-                                className="h-10 w-10 p-3 flex items-center justify-center rounded-full bg-white hover:bg-phicos-primary transition"
+                                className="h-10 w-10 p-3 flex items-center justify-center rounded-full bg-white hover:bg-phicos-primary hover:scale-105 hover:text-white transition"
                             >
                                 <InstagramIcon />
                             </a>
                             <a
                                 href=""
-                                className="h-10 w-10 p-3 flex items-center justify-center rounded-full bg-white hover:bg-phicos-primary transition"
+                                className="h-10 w-10 p-3 flex items-center justify-center rounded-full bg-white hover:bg-phicos-primary hover:scale-105 hover:text-white transition"
                             >
                                 <YoutubeIcon />
                             </a>
@@ -68,7 +68,7 @@ const Footer = () => {
 
                         <a
                             href=""
-                            className="flex gap-2 text-slate-50 w-full h-14 justify-center items-center rounded-full bg-white"
+                            className="flex gap-2 text-slate-50 w-full h-14 justify-center items-center rounded-full bg-white hover:-translate-y-1 transition-transform"
                         >
                             <Phone className="text-phicos-primary" />
                             <p className=" text-slate-600 font-semibold">
@@ -77,7 +77,7 @@ const Footer = () => {
                         </a>
                         <a
                             href="mailto:phicos.id@gmail.com"
-                            className="flex gap-2 text-slate-50 w-full h-14 justify-center items-center rounded-full bg-white"
+                            className="flex gap-2 text-slate-50 w-full h-14 justify-center items-center rounded-full bg-white hover:-translate-y-1 transition-transform"
                         >
                             <Mail className="text-phicos-primary" />
                             <p className="text-slate-600 font-semibold">
